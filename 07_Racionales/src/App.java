@@ -28,15 +28,9 @@ public class App {
 
                 case 1:
                     System.out.println("Opcion: Sumar dos racioneles");
-                    System.out.println("Escribe el numerador del primer racional: ");
-                    r1.setNumerador(scanner.nextInt());
-                    System.out.println("Escribe el denominador del primer racional: ");
-                    r1.setDenominador(scanner.nextInt());
-                    System.out.println("Escribe el numerador del segundo racional: ");
-                    r2.setNumerador(scanner.nextInt());
-                    System.out.println("Escribe el numerador del segundo racional: ");
-                    r2.setDenominador(scanner.nextInt());
 
+                    r1 = Racionales.readDatos(scanner, 1);
+                    r2 = Racionales.readDatos(scanner, 2);
                     r = Racionales.getSuma(r1, r2);
 
                     PrintRacionales.printSuma(r1, r2, r);
@@ -45,15 +39,9 @@ public class App {
 
                 case 2:
                     System.out.println("Opcion: Restar dos racioneles");
-                    System.out.println("Escribe el numerador del primer racional: ");
-                    r1.setNumerador(scanner.nextInt());
-                    System.out.println("Escribe el denominador del primer racional: ");
-                    r1.setDenominador(scanner.nextInt());
-                    System.out.println("Escribe el numerador del segundo racional: ");
-                    r2.setNumerador(scanner.nextInt());
-                    System.out.println("Escribe el numerador del segundo racional: ");
-                    r2.setDenominador(scanner.nextInt());
-
+                    
+                    r1 = Racionales.readDatos(scanner, 1);
+                    r2 = Racionales.readDatos(scanner, 2);
                     r = Racionales.getResta(r1, r2);
 
                     PrintRacionales.printResta(r1, r2, r);
@@ -62,35 +50,28 @@ public class App {
 
                 case 3:
                     System.out.println("Opcion: Multiplicar dos racioneles");
-                    System.out.println("Escribe el numerador del primer racional: ");
-                    r1.setNumerador(scanner.nextInt());
-                    System.out.println("Escribe el denominador del primer racional: ");
-                    r1.setDenominador(scanner.nextInt());
-                    System.out.println("Escribe el numerador del segundo racional: ");
-                    r2.setNumerador(scanner.nextInt());
-                    System.out.println("Escribe el denominador del segundo racional: ");
-                    r2.setDenominador(scanner.nextInt());
+
+                    r1 = Racionales.readDatos(scanner, 1);
+                    r2 = Racionales.readDatos(scanner, 2);
 
                     r = Racionales.getMultiplicacion(r1, r2);
 
-                    PrintRacionales.printMultiplicacion(r1, r2, r);
+                    PrintRacionales.printMultiplicacion(r1, r2, r);   
                 
                 break;
 
                 case 4:
                     System.out.println("Opcion: Dividir dos racioneles");
-                    System.out.println("Escribe el numerador del primer racional: ");
-                    r1.setNumerador(scanner.nextInt());
-                    System.out.println("Escribe el denominador del primer racional: ");
-                    r1.setDenominador(scanner.nextInt());
-                    System.out.println("Escribe el numerador del segundo racional: ");
-                    r2.setNumerador(scanner.nextInt());
-                    System.out.println("Escribe el numerador del segundo racional: ");
-                    r2.setDenominador(scanner.nextInt());
-
-                    r = Racionales.getDivicion(r1, r2);
-
-                    PrintRacionales.printDivision(r1, r2, r);
+                    
+                    r1 = Racionales.readDatos(scanner, 1);
+                    r2 = Racionales.readDatos(scanner, 2);
+                    
+                    try{
+                        r = Racionales.getDivicion(r1, r2);
+                        PrintRacionales.printDivision(r1, r2, r);
+                    }catch(ArithmeticException e){
+                        System.out.println("ERROR: " + e);
+                    }
 
                 break;
             

@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Racionales {
     private int N;
     private int D;
@@ -32,6 +34,29 @@ public class Racionales {
             System.out.println("Denominador asignado a 1.");
             this.D = 1;
         }
+    }
+
+    public static Racionales readDatos(Scanner scanner, int numero){
+        int n = 0;
+        Racionales r = new Racionales();
+
+        System.out.println("Escribe el numerador del racional numero "+ numero +": ");
+        r.setNumerador(scanner.nextInt());
+        System.out.println("Escribe el denominador del racional numero "+ numero +": ");
+        do{
+            int d = scanner.nextInt();
+            if(d != 0){
+                r.setDenominador(d);
+                n = 0;
+            }else{
+                System.out.println("ERROR: El denominador no puede ser 0");
+                System.out.println("Intenta de nuevo.");
+                n = 1;
+            }
+        }while(n != 0);
+
+        return r;
+
     }
 
     //Getters
@@ -82,13 +107,16 @@ public class Racionales {
     }
 
     public static Racionales getDivicion(Racionales r1, Racionales r2){
-        Racionales r = new Racionales();
+        
+        if(r2.N == 0 ){
+            throw new ArithmeticException("No se puede dividir entre cero. ");
+        }else{
+            Racionales r = new Racionales();
+            r.N = r1.N * r2.D;
+            r.D = r1.D * r2.N;
 
-        r.N = r1.N * r2.D;
-        r.D = r1.D * r2.N;
-
-        return r = getSimplificacion(r);
-
+            return getSimplificacion(r);
+        }
     }
 
     public static int getMCD(int a, int b) {
