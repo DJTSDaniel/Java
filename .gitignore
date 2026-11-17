@@ -1,0 +1,6 @@
+# ignorar todas las carpetas de configuracio vscode
+.vscode/
+
+#ignorar compilados de Java
+bin/
+
