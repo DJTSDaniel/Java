@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane fx:controller="com.racionales.OperacionesController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="249.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="172.0" layoutY="14.0" text="OPERACIONES CON NUMEROS RACIONALES" />
+      <Label layoutX="40.0" layoutY="56.0" text="Inserta el primer numero: " />
+      <Label layoutX="40.0" layoutY="84.0" text="Inserta el segundo numero: " />
+      <TextField fx:id="num1" layoutX="196.0" layoutY="52.0" prefHeight="25.0" prefWidth="75.0" promptText="Numerador" />
+      <TextField fx:id="num2" layoutX="196.0" layoutY="80.0" prefHeight="25.0" prefWidth="75.0" promptText="Numerador" />
+      <TextField fx:id="den1" layoutX="300.0" layoutY="52.0" prefHeight="25.0" prefWidth="87.0" promptText="Denominador" />
+      <TextField fx:id="den2" layoutX="300.0" layoutY="80.0" prefHeight="25.0" prefWidth="87.0" promptText="Denominador" />
+      <Label layoutX="281.0" layoutY="56.0" text="/">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="281.0" layoutY="84.0" text="/">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="botonSuma" layoutX="40.0" layoutY="127.0" mnemonicParsing="false" text="Suma" onAction="#suma" />
+      <Button fx:id="botonResta" layoutX="92.0" layoutY="127.0" mnemonicParsing="false" text="Resta" onAction="#resta" />
+      <Button fx:id="botonMultiplicacion" layoutX="144.0" layoutY="127.0" mnemonicParsing="false" text="Multiplicacion" onAction="#multiplicacion" />
+      <Button fx:id="botonDivicion" layoutX="242.0" layoutY="127.0" mnemonicParsing="false" text="Divicion" onAction="#divicion" />
+      <Label fx:id="LResultado" alignment="CENTER" layoutX="26.0" layoutY="183.0" prefHeight="17.0" prefWidth="548.0" text="Resultado" />
+   </children>
+</AnchorPane>
